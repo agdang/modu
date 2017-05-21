@@ -1,5 +1,8 @@
 #pragma once
 
+#include "tile.h"
+#include "map.h"
+
 #include "draw.h"
 
 extern void Draw(tile& t, SDL_Renderer* ren, int worldTilePositionX, int worldTilePositionY)
@@ -10,19 +13,16 @@ extern void Draw(tile& t, SDL_Renderer* ren, int worldTilePositionX, int worldTi
 
 extern void Draw(map& m, SDL_Renderer* ren, int worldOffsetX, int worldOffsetY)
 {
-	// Draw the map
-	// To find the window coordinates of a tile, the tiles index is multiplied
-	// by the TILE_SIZE value
-	for (int j = 0; j < m.height; j++)
+	for (unsigned int j = 0; j < m.height; j++)
 	{
-		for (int i = 0; i < m.width; i++)
+		for (unsigned int i = 0; i < m.width; i++)
 		{
 			tile& cur = *m.GetTile(j, i);
 
 			if (cur.visible == true)
 			{
-				int tileWorldPosX = worldOffsetX + i*TILE_SIZE - m.mapOffsetX*TILE_SIZE;
-				int tileWorldPosY = worldOffsetY + j*TILE_SIZE - m.mapOffsetY*TILE_SIZE;
+				int tileWorldPosX = worldOffsetX + i*TILE_SIZE - m.offsetX*TILE_SIZE;
+				int tileWorldPosY = worldOffsetY + j*TILE_SIZE - m.offsetY*TILE_SIZE;
 
 				switch (cur.type)
 				{
@@ -31,7 +31,6 @@ extern void Draw(map& m, SDL_Renderer* ren, int worldOffsetX, int worldOffsetY)
 				case ENTRANCE: SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);	 Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
 				}
 
-				// Reset the visibility of the tile for the next loop
 				SetVisible(cur, false);
 			}
 		}

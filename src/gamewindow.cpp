@@ -2,17 +2,38 @@
 
 #include <SDL.h>
 
-#include "gamewindow.hpp"
+#include "gamewindow.h"
 
-GameWindow::GameWindow(const char* title, int w, int h)
+GameWindow::GameWindow(unsigned int w, unsigned int h)
 {
-	SDL_Init(SDL_INIT_VIDEO);
+	int err = SDL_Init(SDL_INIT_VIDEO);
+
+	if (err != NULL)
+	{
+		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), NULL);
+		exit(err);
+	}
 
 	width = w;
 	height = h;
 
-	window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+	windowTitle << "modu v" << VERSION_MAJOR << "." << VERSION_MINOR << "." << VERSION_REVISION << ".alpha";
+
+	window = SDL_CreateWindow(windowTitle.str().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+
+	if (window == NULL)
+	{
+		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), NULL);
+		exit(1);
+	}
+
 	renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
+
+	if (renderer == NULL)
+	{
+		exit(1);
+		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), window);
+	}
 }
 
 GameWindow::~GameWindow()

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "tile.hpp"
-#include "map.hpp"
+#include "tile.h"
+#include "map.h"
 
-map::map(int w, int h)
+map::map(unsigned int w, unsigned int h)
 {
 	width = w; height = h;
-	mapOffsetX = 0; mapOffsetY = 0;
+	offsetX = 0; offsetY = 0;
 	startOffsetX = 0; startOffsetY = 0;
 
-	for (int j = 0; j < height; j++)
+	for (unsigned int j = 0; j < height; j++)
 	{
-		for (int i = 0; i < width; i++)
+		for (unsigned int i = 0; i < width; i++)
 		{
 			if (rand() % 10 + 1 == 1)
 				tiles.push_back(new tile(WALL, true));
@@ -20,16 +20,16 @@ map::map(int w, int h)
 		}
 	}
 
-	GetTile(0, 0)->type = ENTRANCE;
-	GetTile(0, 0)->solid = false;
+	GetTile(5, 5)->type = ENTRANCE;
+	GetTile(5, 5)->solid = false;
 
-	for (int j = 0; j < height; j++)
+	for (unsigned int j = 0; j < height; j++)
 	{
-		for (int i = 0; i < width; i++)
+		for (unsigned int i = 0; i < width; i++)
 		{
 			if (GetTile(j, i)->type == ENTRANCE)
 			{
-				startOffsetX = mapOffsetX = i; startOffsetY = mapOffsetY = j;
+				startOffsetX = offsetX = i; startOffsetY = offsetY = j;
 			}
 		}
 	}
@@ -37,16 +37,17 @@ map::map(int w, int h)
 
 map::~map()
 {
-	for (int i = 0; i < tiles.size(); i++)
+	for (unsigned int i = 0; i < tiles.size(); i++)
 	{
 		delete tiles[i];
-	};
+	}
+
 	tiles.clear();
 }
 
 void map::ResetOffset()
 {
-	mapOffsetX = startOffsetX; mapOffsetY = startOffsetY;
+	offsetX = startOffsetX; offsetY = startOffsetY;
 }
 
-tile* map::GetTile(int y, int x) { return tiles[(y * width) + x]; }
+tile* map::GetTile(unsigned int y, unsigned int x) { return tiles[(y * width) + x]; }

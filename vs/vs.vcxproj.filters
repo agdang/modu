@@ -4,6 +4,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{14ecd214-1b21-41d6-8124-7f5bc3e9b6e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="notes">
+      <UniqueIdentifier>{c7a6e8c8-55f4-4c9a-95e7-ab4a3fecce1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\draw.cpp">
@@ -29,17 +32,31 @@
     <ClInclude Include="..\src\draw.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\gamewindow.hpp">
+    <ClInclude Include="..\src\gamewindow.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\gameworld.hpp">
+    <ClInclude Include="..\src\gameworld.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\map.hpp">
+    <ClInclude Include="..\src\map.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\tile.hpp">
+    <ClInclude Include="..\src\tile.h">
       <Filter>src</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\doc\BUGS.TXT">
+      <Filter>notes</Filter>
+    </Text>
+    <Text Include="..\doc\lighting prototype.txt">
+      <Filter>notes</Filter>
+    </Text>
+    <Text Include="..\doc\PROBLEMS.TXT">
+      <Filter>notes</Filter>
+    </Text>
+    <Text Include="..\doc\TODO.TXT">
+      <Filter>notes</Filter>
+    </Text>
   </ItemGroup>
 </Project>

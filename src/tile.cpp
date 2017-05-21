@@ -1,9 +1,9 @@
 #pragma once
 
-#include "tile.hpp"
+#include "tile.h"
 
-tile::tile(int t, bool s)
+tile::tile(unsigned short int t, bool s)
 {
 	width = TILE_SIZE; height = TILE_SIZE;
-	type = t; visible = false; solid = s;
+	type = t; solid = s; visible = false;
 }

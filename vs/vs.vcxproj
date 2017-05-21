@@ -28,10 +28,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\draw.h" />
-    <ClInclude Include="..\src\gamewindow.hpp" />
-    <ClInclude Include="..\src\gameworld.hpp" />
-    <ClInclude Include="..\src\map.hpp" />
-    <ClInclude Include="..\src\tile.hpp" />
+    <ClInclude Include="..\src\gamewindow.h" />
+    <ClInclude Include="..\src\gameworld.h" />
+    <ClInclude Include="..\src\map.h" />
+    <ClInclude Include="..\src\tile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\doc\BUGS.TXT" />
+    <Text Include="..\doc\lighting prototype.txt" />
+    <Text Include="..\doc\PROBLEMS.TXT" />
+    <Text Include="..\doc\TODO.TXT" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -92,8 +98,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>D:\Development\modu-win\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Development\modu-win\lib\windows\x86;$(LibraryPath)</LibraryPath>
-    <OutDir>..\bin\win32</OutDir>
-    <IntDir>..\build\win32</IntDir>
+    <OutDir>..\bin\win32\</OutDir>
+    <IntDir>..\build\win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>D:\Development\modu-win\include;$(IncludePath)</IncludePath>
@@ -102,8 +108,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\Development\modu-win\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Development\modu-win\lib\windows\x64;$(LibraryPath)</LibraryPath>
-    <OutDir>..\bin\x86_64</OutDir>
-    <IntDir>..\build\x86_64</IntDir>
+    <OutDir>..\bin\x86_64\</OutDir>
+    <IntDir>..\build\x86_64\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
