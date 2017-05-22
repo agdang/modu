@@ -13,10 +13,4 @@
 /bin/x86_64/*.ipdb
 /bin/x86_64/*.pdb
 
-*.log
-
-/build/win32/tlog/*
-/build/x86_64/tlog/*
-
-/vs/Debug/*
-/vs/x64/*
+/vs/
