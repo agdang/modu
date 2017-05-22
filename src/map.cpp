@@ -13,15 +13,35 @@ map::map(unsigned int w, unsigned int h)
 	{
 		for (unsigned int i = 0; i < width; i++)
 		{
-			if (rand() % 10 + 1 == 1)
-				tiles.push_back(new tile(WALL, true));
-			else
-				tiles.push_back(new tile(EMPTY, false));
+			tiles.push_back(new tile(EMPTY, false));
 		}
 	}
 
-	GetTile(5, 5)->type = ENTRANCE;
-	GetTile(5, 5)->solid = false;
+	GetTile(0, 0)->type = ENTRANCE;
+	GetTile(0, 0)->solid = false;
+
+	for (int j = 5; j < 17; j++)
+	{
+		GetTile(j, 5)->type = WALL; GetTile(j, 5)->solid = true;
+		GetTile(j, 17)->type = WALL; GetTile(j, 17)->solid = true;
+		for (int i = 5; i < 18; i++)
+		{
+			GetTile(5, i)->type = WALL; GetTile(5, i)->solid = true;
+			GetTile(17, i)->type = WALL; GetTile(17, i)->solid = true;
+
+			if (i == 11)
+			{
+				GetTile(5, i)->type = EMPTY; GetTile(5, i)->solid = false;
+				GetTile(17, i)->type = EMPTY; GetTile(17, i)->solid = false;
+			}
+		}
+
+		if (j == 11)
+		{
+			GetTile(j, 5)->type = EMPTY; GetTile(j, 5)->solid = false;
+			GetTile(j, 17)->type = EMPTY; GetTile(j, 17)->solid = false;
+		}
+	}
 
 	for (unsigned int j = 0; j < height; j++)
 	{

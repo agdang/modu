@@ -26,8 +26,8 @@ extern void Draw(map& m, SDL_Renderer* ren, int worldOffsetX, int worldOffsetY)
 
 				switch (cur.type)
 				{
-				case EMPTY: SDL_SetRenderDrawColor(ren, 120, 120, 120, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
-				case WALL:  SDL_SetRenderDrawColor(ren, 255, 255, 255, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
+				case EMPTY: SDL_SetRenderDrawColor(ren, 100, 100, 100, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
+				case WALL:  SDL_SetRenderDrawColor(ren, 50, 30, 10, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
 				case ENTRANCE: SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);	 Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
 				}
 

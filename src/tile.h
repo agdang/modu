@@ -1,6 +1,6 @@
 #pragma once
 
-static const unsigned short int TILE_SIZE = 4;
+static const unsigned short int TILE_SIZE = 16;
 
 enum TILE_TYPE { EMPTY = 0, WALL = 1, ENTRANCE = 2, STAIR = 3 };
 
