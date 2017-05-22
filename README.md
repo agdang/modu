@@ -4,8 +4,6 @@ A WIP rogulike made for Windows and Linux
 # Repository Index
 * /bin - Contains executables
 * /build - Intermediate directory for visual studio
-* /include - Included files from SDL
-* /lib - Library files from SDL
 * /src - modu source
 * /vs - Visual studio project folder
 
@@ -14,9 +12,9 @@ A WIP rogulike made for Windows and Linux
 
 # Building
 
-You can build modu on Windows using the Visual Studio 2017 project file provided in /vs .
+You can build modu on Windows a compiler of your choice. A Visual Studio 2017 project file is provided in /vs .
 
-If you use another compiler, you will have to point it to the SDL source and libraries located in /include and /lib .  
+You will have to point whatever compiler you use to where your SDL /include and /lib folder is located. 
 
 To build modu on linux you can use this command:
 * g++ -o bin/linux/x86_64/modu src/*.cpp -lSDL2
