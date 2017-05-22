@@ -3,6 +3,7 @@
 
 /include/
 /lib/
+/build/
 
 /bin/win32/*.iobj
 /bin/win32/*.ipdb
