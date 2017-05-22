@@ -3,7 +3,7 @@
 
 #include "draw.h"
 
-extern void Draw(tile& t, SDL_Renderer* ren, int worldTilePositionX, int worldTilePositionY)
+extern void Draw(SDL_Renderer* ren, int worldTilePositionX, int worldTilePositionY)
 {
 	SDL_Rect r = { worldTilePositionX, worldTilePositionY, TILE_SIZE, TILE_SIZE };
 	SDL_RenderFillRect(ren, &r);
@@ -24,9 +24,9 @@ extern void Draw(map& m, SDL_Renderer* ren, int worldOffsetX, int worldOffsetY)
 
 				switch (cur.type)
 				{
-				case EMPTY: SDL_SetRenderDrawColor(ren, 100, 100, 100, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
-				case WALL:  SDL_SetRenderDrawColor(ren, 50, 30, 10, 255); Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
-				case ENTRANCE: SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);	 Draw(cur, ren, tileWorldPosX, tileWorldPosY); break;
+				case EMPTY: SDL_SetRenderDrawColor(ren, 100, 100, 100, 255); Draw(ren, tileWorldPosX, tileWorldPosY); break;
+				case WALL:  SDL_SetRenderDrawColor(ren, 50, 30, 10, 255); Draw(ren, tileWorldPosX, tileWorldPosY); break;
+				case ENTRANCE: SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);	 Draw(ren, tileWorldPosX, tileWorldPosY); break;
 				}
 
 				SetVisible(cur, false);

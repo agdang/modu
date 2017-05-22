@@ -30,9 +30,9 @@ int main(int argc, char* argv[])
 		int worldOffsetX = (gameWindow->width / 2) - (TILE_SIZE / 2);
 		int worldOffsetY = (gameWindow->height / 2) - (TILE_SIZE / 2);
 
-		int playerUpTileY		= gameWorld->GetCurrentMap()->offsetY - 1;	int playerUpTileX		= gameWorld->GetCurrentMap()->offsetX;
-		int playerDownTileY		= gameWorld->GetCurrentMap()->offsetY + 1;	int playerDownTileX		= gameWorld->GetCurrentMap()->offsetX;
-		int playerLeftTileY		= gameWorld->GetCurrentMap()->offsetY;		int playerLeftTileX		= gameWorld->GetCurrentMap()->offsetX - 1;
+		int playerUpTileY	= gameWorld->GetCurrentMap()->offsetY - 1;	int playerUpTileX	= gameWorld->GetCurrentMap()->offsetX;
+		int playerDownTileY	= gameWorld->GetCurrentMap()->offsetY + 1;	int playerDownTileX	= gameWorld->GetCurrentMap()->offsetX;
+		int playerLeftTileY	= gameWorld->GetCurrentMap()->offsetY;		int playerLeftTileX	= gameWorld->GetCurrentMap()->offsetX - 1;
 		int playerRightTileY	= gameWorld->GetCurrentMap()->offsetY;		int playerRightTileX	= gameWorld->GetCurrentMap()->offsetX + 1;
 
 		SDL_Event event;
