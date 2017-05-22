@@ -5,7 +5,7 @@ GameWorld::GameWorld() {}
 
 GameWorld::~GameWorld()
 {
-	for (unsigned int i = 0; i < maps.size(); i++)
+	for (int i = 0; i < maps.size(); i++)
 	{
 		delete maps[i];
 	}
@@ -17,7 +17,7 @@ void GameWorld::AddMap(map* m) { maps[static_cast<unsigned int> (maps.size())] =
 
 void GameWorld::SetMap(map* m)
 {
-	for (unsigned int i = 0; i < maps.size(); i++)
+	for (int i = 0; i < maps.size(); i++)
 	{
 		if (maps[i] == m)
 		{

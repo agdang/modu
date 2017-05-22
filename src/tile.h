@@ -2,7 +2,7 @@
 
 static const unsigned short int TILE_SIZE = 16;
 
-enum TILE_TYPE { EMPTY = 0, WALL = 1, ENTRANCE = 2, STAIR = 3 };
+enum TILE_TYPE { EMPTY, FLOOR, WALL, ENTRANCE, STAIR, };
 
 struct tile
 {
@@ -10,8 +10,10 @@ struct tile
 
 	unsigned int width; unsigned int height;
 
-	bool visible; bool solid;
+	int x; int y;
 
-	tile(unsigned short int t,  bool s);
+	bool solid;
+
+	tile(unsigned short int t,  bool s, int x, int y);
 	~tile() {}
 };

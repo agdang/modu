@@ -13,11 +13,11 @@ struct GameWindow
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
-	unsigned int width; unsigned int height;
+	int width; int height;
 
 	std::stringstream windowTitle;
 
-	GameWindow(unsigned int w, unsigned int h);
+	GameWindow(int w, int h);
 
 	~GameWindow();
 

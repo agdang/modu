@@ -1,6 +1,9 @@
 /doc/
 !/doc/BUGS.txt
 
+/include/
+/lib/
+
 /bin/win32/*.iobj
 /bin/win32/*.ipdb
 /bin/win32/*.pdb

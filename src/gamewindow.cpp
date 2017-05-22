@@ -2,7 +2,7 @@
 
 #include "gamewindow.h"
 
-GameWindow::GameWindow(unsigned int w, unsigned int h)
+GameWindow::GameWindow(int w, int h)
 {
 	int err = SDL_Init(SDL_INIT_VIDEO);
 
@@ -29,8 +29,8 @@ GameWindow::GameWindow(unsigned int w, unsigned int h)
 
 	if (renderer == NULL)
 	{
-		exit(1);
 		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), window);
+		exit(1);
 	}
 }
 
