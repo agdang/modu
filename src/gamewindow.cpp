@@ -1,6 +1,4 @@
-#pragma once
-
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #include "gamewindow.h"
 
@@ -8,7 +6,7 @@ GameWindow::GameWindow(unsigned int w, unsigned int h)
 {
 	int err = SDL_Init(SDL_INIT_VIDEO);
 
-	if (err != NULL)
+	if (err != 0)
 	{
 		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), NULL);
 		exit(err);

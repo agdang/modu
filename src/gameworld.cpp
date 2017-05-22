@@ -1,5 +1,3 @@
-#pragma once
-
 #include "map.h"
 #include "gameworld.h"
 

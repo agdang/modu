@@ -1,5 +1,3 @@
-#pragma once
-
 #include "tile.h"
 #include "map.h"
 

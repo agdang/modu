@@ -1,5 +1,3 @@
-#pragma once
-
 #include "tile.h"
 
 tile::tile(unsigned short int t, bool s)
