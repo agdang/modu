@@ -13,8 +13,9 @@ You will have to point whatever compiler you use to where your SDL /include and 
 
 # Building (Linux)
 
-## Dependancies (Linux)
+### Dependancies (Linux)
 * libsdl2-dev
+
 
 To build modu on linux you can use this command:
 * g++ -o bin/linux/x86_64/modu src/*.cpp -lSDL2
