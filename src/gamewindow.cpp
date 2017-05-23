@@ -1,3 +1,5 @@
+#include <ctime>
+
 #include <SDL2/SDL.h>
 
 #include "gamewindow.h"
@@ -25,13 +27,15 @@ GameWindow::GameWindow(int w, int h)
 		exit(1);
 	}
 
-	renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
+	renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
 	if (renderer == NULL)
 	{
 		SDL_ShowSimpleMessageBox(0, "Fatal Error", SDL_GetError(), window);
 		exit(1);
 	}
+
+	srand(static_cast<long int> (time(NULL)));
 }
 
 GameWindow::~GameWindow()

@@ -5,26 +5,16 @@ GameWorld::GameWorld() {}
 
 GameWorld::~GameWorld()
 {
-	for (int i = 0; i < maps.size(); i++)
-	{
-		delete maps[i];
-	}
-
-	maps.clear();
+	for (auto it : maps) delete it;
 }
 
-void GameWorld::AddMap(map* m) { maps[static_cast<unsigned int> (maps.size())] = m; }
+void GameWorld::AddMap(map* m) 
+{ 
+	maps.push_back(m); 
+}
 
-void GameWorld::SetMap(map* m)
+map& GameWorld::LoadMap(map* m)
 {
-	for (int i = 0; i < maps.size(); i++)
-	{
-		if (maps[i] == m)
-		{
-			curMap = i;
-			maps[curMap]->ResetOffset();
-		}
-	}
+	m->ResetOffset();
+	return *m;
 }
-
-map* GameWorld::GetCurrentMap() { return maps[curMap]; }

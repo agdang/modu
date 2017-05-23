@@ -18,5 +18,5 @@ struct map
 
 	void ResetOffset();
 
-	tile* GetTile(int y, int x);
+	tile* GetTile(int x, int y);
 };

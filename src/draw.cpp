@@ -12,12 +12,10 @@ extern void Draw(SDL_Renderer* ren, tile& t, int mapOffsetX, int mapOffsetY, int
 	{
 	case EMPTY: return;
 	case FLOOR: SDL_SetRenderDrawColor(ren, 100, 100, 100, 255);	break;
-	case WALL:  SDL_SetRenderDrawColor(ren, 50, 30, 10, 255);		break;
+	case WALL:  SDL_SetRenderDrawColor(ren, 40, 30, 10, 255);		break;
 	case ENTRANCE: SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);		break;
 	}
 
 	SDL_Rect r = { tileWorldPosX, tileWorldPosY, TILE_SIZE, TILE_SIZE };
 	SDL_RenderFillRect(ren, &r);
 }
-
-extern void SetSolid(tile& t, bool s) { t.solid = s; }

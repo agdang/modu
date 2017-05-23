@@ -8,7 +8,7 @@ struct tile
 {
 	unsigned short int type;
 
-	unsigned int width; unsigned int height;
+	unsigned int width;
 
 	int x; int y;
 

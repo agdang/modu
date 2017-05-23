@@ -1,18 +1,12 @@
 #pragma once
 
-#include <map>
-
 struct GameWorld
 {
-	std::map<unsigned int, map*> maps;
-
-	unsigned int curMap;
+	std::vector<map*> maps;
 
 	GameWorld();
 	~GameWorld();
 
 	void AddMap(map* m);
-	void SetMap(map* m);
-
-	map* GetCurrentMap();
+	map& LoadMap(map* m);
 };

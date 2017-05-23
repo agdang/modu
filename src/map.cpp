@@ -18,50 +18,12 @@ map::map(int w, int h)
 	GetTile(5, 5)->type = ENTRANCE;
 	GetTile(5, 5)->solid = false;
 
-	/*for (int j = 5; j < 17; j++)
-	{
-		GetTile(j, 5)->type = WALL; GetTile(j, 5)->solid = true;
-		GetTile(j, 17)->type = WALL; GetTile(j, 17)->solid = true;
-
-		for (int i = 5; i < 18; i++)
-		{
-			GetTile(5, i)->type = WALL; GetTile(5, i)->solid = true;
-			GetTile(17, i)->type = WALL; GetTile(17, i)->solid = true;
-
-			if (i == 11)
-			{
-				GetTile(5, i)->type = EMPTY; GetTile(5, i)->solid = false;
-				GetTile(17, i)->type = EMPTY; GetTile(17, i)->solid = false;
-			}
-		}
-
-		if (j == 11)
-		{
-			GetTile(j, 5)->type = EMPTY; GetTile(j, 5)->solid = false;
-			GetTile(j, 17)->type = EMPTY; GetTile(j, 17)->solid = false;
-		}
-	}*/
-
-	for (int j = 0; j < height; j++)
-	{
-		for (int i = 0; i < width; i++)
-		{
-			if (GetTile(i, j)->type == ENTRANCE)
-			{
-				startOffsetX = offsetX = i; startOffsetY = offsetY = j;
-			}
-		}
-	}
+	startOffsetX = offsetX = 5; startOffsetY = offsetY = 5;
 }
 
 map::~map()
 {
-	for (int i = 0; i < tiles.size(); i++)
-	{
-		delete tiles[i];
-	}
-
-	tiles.clear();
+	for (auto it : tiles) delete it;
 }
 
 void map::ResetOffset()

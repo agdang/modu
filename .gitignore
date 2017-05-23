@@ -1,10 +1,6 @@
 /doc/
 !/doc/BUGS.txt
 
-/include/
-/lib/
-/build/
-
 /bin/win32/*.iobj
 /bin/win32/*.ipdb
 /bin/win32/*.pdb
@@ -12,5 +8,9 @@
 /bin/x86_64/*.iobj
 /bin/x86_64/*.ipdb
 /bin/x86_64/*.pdb
+
+/include/
+/lib/
+/build/
 
 /vs/

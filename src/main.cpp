@@ -1,4 +1,3 @@
-#include <ctime>
 #include <cmath>
 
 #include "tile.h"
@@ -9,8 +8,6 @@
 
 int main(int argc, char* argv[])
 {
-	srand(static_cast<long int> (time(NULL)));
-
 	int WINDOW_WIDTH = (32 * TILE_SIZE) + TILE_SIZE; int WINDOW_HEIGHT = WINDOW_WIDTH;
 
 	GameWindow* gameWindow = new GameWindow(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -19,9 +16,8 @@ int main(int argc, char* argv[])
 	map* m = new map(20, 20);
 
 	gameWorld->AddMap(m);
-	gameWorld->SetMap(m);
 
-	map& currentMap = *gameWorld->GetCurrentMap();
+	map& currentMap = gameWorld->LoadMap(m);
 
 	unsigned short int viewRadius = 15; unsigned short int viewH;
 
@@ -123,7 +119,7 @@ int main(int argc, char* argv[])
 				case SDLK_EQUALS:	viewRadius += 1; break;
 				case SDLK_MINUS:	if (viewRadius > 0) viewRadius -= 1; break;
 
-				case SDLK_1:		gameWorld->SetMap(m); currentMap = *gameWorld->GetCurrentMap(); break;
+				case SDLK_1:		currentMap = gameWorld->LoadMap(m); break;
 				}
 				break;
 			}
