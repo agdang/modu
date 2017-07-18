@@ -1,5 +1,6 @@
 #include <cmath>
 
+#include "app.h"
 #include "tile.h"
 #include "map.h"
 #include "draw.h"
@@ -8,7 +9,11 @@
 
 int main(int argc, char* argv[])
 {
-	int WINDOW_WIDTH = (32 * TILE_SIZE) + TILE_SIZE; int WINDOW_HEIGHT = WINDOW_WIDTH;
+	App::Init();
+	App::Cycle();
+	App::Close();
+
+	/*int WINDOW_WIDTH = (32 * TILE_SIZE) + TILE_SIZE; int WINDOW_HEIGHT = WINDOW_WIDTH;
 
 	GameWindow* gameWindow = new GameWindow(WINDOW_WIDTH, WINDOW_HEIGHT);
 	GameWorld* gameWorld = new GameWorld;
@@ -19,7 +24,8 @@ int main(int argc, char* argv[])
 
 	map& currentMap = gameWorld->LoadMap(m);
 
-	unsigned short int viewRadius = 15; unsigned short int viewH;
+	unsigned short int viewRadius = 15; 
+	unsigned short int viewH;
 
 	bool running = true;
 
@@ -171,6 +177,6 @@ int main(int argc, char* argv[])
 	delete gameWindow;
 
 	SDL_Quit();
-
+	*/
 	return 0;
 }

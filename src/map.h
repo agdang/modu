@@ -12,7 +12,8 @@ struct map
 
 	int startOffsetX; int startOffsetY;
 	int offsetX; int offsetY;
-
+	
+	map() {}
 	map(int w, int h);
 	~map();
 
